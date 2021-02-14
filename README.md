@@ -10,7 +10,12 @@ go-language 学习
 * gc垃圾回收
 
 * 适用于服务器编程，分布式系统，网络编程，内存数据库，云平台
-### 
+### 教程
+
+#### 8小时转职Golang工程师
+* 视频：https://www.bilibili.com/video/BV1gf4y1r79E
+* 笔记：[8小时转职Golang工程师](8小时转职Golang工程师)
+* 代码：[code](8小时转职Golang工程师\GolangStudy)
 
 
 ### License

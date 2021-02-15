@@ -1,3 +1,12 @@
+/*
+ * @Description:  常量和枚举类型 https://www.bilibili.com/video/BV1gf4y1r79E?p=6
+ * @Author: HCQ
+ * @Company(School): UCAS
+ * @Email: 1756260160@qq.com
+ * @Date: 2021-02-14 23:08:07
+ * @LastEditTime: 2021-02-15 22:22:13
+ * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/3-const_iota/test2_const.go
+ */
 package main
 
 import "fmt"
@@ -27,9 +36,9 @@ func main() {
 
 	//length = 100 //常量是不允许修改的。
 
-	fmt.Println("BEIJIGN = ", BEIJING)
-	fmt.Println("SHANGHAI = ", SHANGHAI)
-	fmt.Println("SHENZHEN = ", SHENZHEN)
+	fmt.Println("BEIJIGN = ", BEIJING) // BEIJIGN =  0
+	fmt.Println("SHANGHAI = ", SHANGHAI) // SHANGHAI =  10
+	fmt.Println("SHENZHEN = ", SHENZHEN) // SHENZHEN =  20
 
 	fmt.Println("a = ", a, "b = ", b)
 	fmt.Println("c = ", c, "d = ", d)

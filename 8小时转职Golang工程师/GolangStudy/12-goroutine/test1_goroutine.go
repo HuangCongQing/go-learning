@@ -8,7 +8,7 @@ import (
 //子goroutine
 func newTask() {
 	i := 0
-	for {
+	for {   // for死循环
 		i++
 		fmt.Printf("new Goroutine : i = %d\n", i)
 		time.Sleep(1 * time.Second)

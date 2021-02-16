@@ -33,7 +33,7 @@ func (this *Server) Start() {
 		fmt.Println("net.Listen err:", err)
 		return
 	}
-	//close listen socket
+	//close listen socket  函数结束前关闭
 	defer listener.Close()
 
 	for {

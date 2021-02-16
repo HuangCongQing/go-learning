@@ -1,4 +1,14 @@
-package main
+/*
+ * @Description: 多态
+ * @Author: HCQ
+ * @Company(School): UCAS
+ * @Email: 1756260160@qq.com
+ * @Date: 2021-02-14 23:08:07
+ * @LastEditTime: 2021-02-16 12:32:53
+ * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/10-OOP/test4_interface.go
+ */
+
+ package main
 
 import "fmt"
 
@@ -26,7 +36,7 @@ func (this *Cat) GetType() string {
 	return "Cat"
 }
 
-//具体的类
+//具体的类   Dog
 type Dog struct {
 	color string
 }

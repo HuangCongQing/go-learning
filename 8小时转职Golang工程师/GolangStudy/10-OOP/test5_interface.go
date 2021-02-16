@@ -1,3 +1,14 @@
+/*
+ * @Description: interface{}是万能数据类型
+ * @Author: HCQ
+ * @Company(School): UCAS
+ * @Email: 1756260160@qq.com
+ * @Date: 2021-02-14 23:08:07
+ * @LastEditTime: 2021-02-16 12:37:52
+ * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/10-OOP/test5_interface.go
+ */
+
+
 package main
 
 import "fmt"

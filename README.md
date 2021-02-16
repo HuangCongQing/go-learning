@@ -21,6 +21,6 @@ go-language 学习（2021年寒假）
 
 ### License
 
-Copyright (c) [ChungKing](https://github.com/HuangCongQing). All rights reserved.
+Copyright (c) [双愚](https://github.com/HuangCongQing). All rights reserved.
 
 Licensed under the MIT License.

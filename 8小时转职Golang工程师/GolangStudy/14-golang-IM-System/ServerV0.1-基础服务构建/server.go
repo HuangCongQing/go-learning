@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"net"
+	"net"  // socket
 )
 
 type Server struct {

@@ -1,3 +1,12 @@
+/*
+ * @Description: 拷贝
+ * @Author: HCQ
+ * @Company(School): UCAS
+ * @Email: 1756260160@qq.com
+ * @Date: 2021-02-14 23:08:07
+ * @LastEditTime: 2021-02-16 11:54:55
+ * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/8-slice/test5_slice.go
+ */
 package main
 
 import "fmt"
@@ -20,6 +29,6 @@ func main() {
 
 	//将s中的值 依次拷贝到s2中
 	copy(s2, s)
-	fmt.Println(s2)
+	fmt.Println(s2) // [100 2 3]
 
 }

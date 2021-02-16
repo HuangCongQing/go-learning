@@ -1,3 +1,12 @@
+/*
+ * @Description: 指针
+ * @Author: HCQ
+ * @Company(School): UCAS
+ * @Email: 1756260160@qq.com
+ * @Date: 2021-02-14 23:08:07
+ * @LastEditTime: 2021-02-16 11:24:03
+ * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/6-pointer/pointer.go
+ */
 package main
 
 import "fmt"
@@ -35,6 +44,7 @@ func main() {
 	fmt.Println(&a)
 	fmt.Println(p)
 
+	// 二级指针！！！！！！！！！！！！！！！！！！
 	var pp **int //二级指针
 
 	pp = &p

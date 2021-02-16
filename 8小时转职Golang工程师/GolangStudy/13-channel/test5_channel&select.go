@@ -1,7 +1,7 @@
 package main
 
 import "fmt"
-
+// 斐波那契数列  监控两个channel  c&quit
 func fibonacii(c, quit chan int) {
 	x, y := 1, 1
 
@@ -10,7 +10,7 @@ func fibonacii(c, quit chan int) {
 		case c <- x:
 			//如果c可写，则该case就会进来
 			x = y
-			y = x + y
+			y = x + y // 斐波那契数列
 		case <-quit:
 			fmt.Println("quit")
 			return

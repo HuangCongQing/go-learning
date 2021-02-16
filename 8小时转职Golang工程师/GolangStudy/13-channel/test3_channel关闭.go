@@ -15,7 +15,7 @@ func main() {
 
 	for {
 		//ok如果为true表示channel没有关闭，如果为false表示channel已经关闭
-		if data, ok := <-c; ok {
+		if data, ok := <-c; ok {  // if 判断ok
 			fmt.Println(data)
 		} else {
 			break

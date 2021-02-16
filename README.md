@@ -19,6 +19,9 @@ go-language 学习（2021年寒假）
 * 笔记：[8小时转职Golang工程师](8小时转职Golang工程师)
 * 代码：[code](8小时转职Golang工程师\GolangStudy)
 
+### Reference
+* https://github.com/aceld/golang
+
 ### License
 
 Copyright (c) [双愚](https://github.com/HuangCongQing). All rights reserved.

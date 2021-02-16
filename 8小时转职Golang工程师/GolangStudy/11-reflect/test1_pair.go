@@ -9,9 +9,9 @@ func main() {
 	a = "aceld"
 
 	//pair<type:string, value:"aceld">
-	var allType interface{}
+	var allType interface{}    // 万能类型type
 	allType = a
 
 	str, _ := allType.(string)
-	fmt.Println(str)
+	fmt.Println(str)    // aceld
 }

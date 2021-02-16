@@ -1,3 +1,12 @@
+/*
+ * @Description: json
+ * @Author: HCQ
+ * @Company(School): UCAS
+ * @Email: 1756260160@qq.com
+ * @Date: 2021-02-14 23:08:07
+ * @LastEditTime: 2021-02-16 12:55:51
+ * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/11-reflect/test7_json.go
+ */
 package main
 
 import (
@@ -22,7 +31,7 @@ func main() {
 		return
 	}
 
-	fmt.Printf("jsonStr = %s\n", jsonStr)
+	fmt.Printf("jsonStr = %s\n", jsonStr)   // jsonStr = {"title":"喜剧之王","year":2000,"rmb":10,"actors":["xingye","zhangbozhi"]}
 
 	//解码的过程 jsonstr ---> 结构体
 	//jsonStr = {"title":"喜剧之王","year":2000,"rmb":10,"actors":["xingye","zhangbozhi"]}
@@ -33,5 +42,5 @@ func main() {
 		return
 	}
 
-	fmt.Printf("%v\n", myMovie)
+	fmt.Printf("%v\n", myMovie)  // {喜剧之王 2000 10 [xingye zhangbozhi]}
 }

@@ -15,3 +15,8 @@ func main() {
 
 	reflectNum(num)
 }
+
+/* 
+type :  float64
+value :  1.2345
+*/

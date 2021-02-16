@@ -11,13 +11,17 @@ type resume struct {
 }
 
 func findTag(str interface{}) {
-	t := reflect.TypeOf(str).Elem()
+	t := reflect.TypeOf(str).Elem()  // ?????
 
 	for i := 0; i < t.NumField(); i++ {
 		taginfo := t.Field(i).Tag.Get("info")
 		tagdoc := t.Field(i).Tag.Get("doc")
 		fmt.Println("info: ", taginfo, " doc: ", tagdoc)
 	}
+	/* 
+	info:  name  doc:  我的名字
+	info:  sex  doc:  
+	*/
 }
 
 func main() {

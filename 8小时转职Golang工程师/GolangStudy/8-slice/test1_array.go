@@ -1,3 +1,12 @@
+/*
+ * @Description: 
+ * @Author: HCQ
+ * @Company(School): UCAS
+ * @Email: 1756260160@qq.com
+ * @Date: 2021-02-14 23:08:07
+ * @LastEditTime: 2021-02-16 11:33:32
+ * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/8-slice/test1_array.go
+ */
 package main
 
 import "fmt"
@@ -22,7 +31,7 @@ func main() {
 
 	//for i := 0; i < 10; i++ {
 	for i := 0; i < len(myArray1); i++ {
-		fmt.Println(myArray1[i])	
+		fmt.Println(myArray1[i])	// 默认值为0
 	}
 
 	for index, value := range myArray2 {

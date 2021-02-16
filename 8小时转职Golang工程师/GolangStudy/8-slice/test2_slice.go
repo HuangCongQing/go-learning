@@ -1,3 +1,12 @@
+/*
+ * @Description: 切片
+ * @Author: HCQ
+ * @Company(School): UCAS
+ * @Email: 1756260160@qq.com
+ * @Date: 2021-02-14 23:08:07
+ * @LastEditTime: 2021-02-16 11:39:00
+ * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/8-slice/test2_slice.go
+ */
 package main
 
 import "fmt"
@@ -13,11 +22,11 @@ func printArray(myArray []int) {
 }
 
 func main() {
-	myArray := []int{1,2,3,4} // 动态数组，切片 slice
+	myArray := []int{1,2,3,4} // 动态数组，切片 slice（[]中间没有数字）
 
-	fmt.Printf("myArray type is %T\n", myArray)
+	fmt.Printf("myArray type is %T\n", myArray)   // myArray type is []int
 
-	printArray(myArray)
+	printArray(myArray)  // 引用
 
 	fmt.Println(" ==== ")
 

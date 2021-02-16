@@ -1,3 +1,13 @@
+/*
+ * @Description: 四种切片方式   https://www.bilibili.com/video/BV1gf4y1r79E?p=13
+ * @Author: HCQ
+ * @Company(School): UCAS
+ * @Email: 1756260160@qq.com
+ * @Date: 2021-02-14 23:08:07
+ * @LastEditTime: 2021-02-16 11:43:22
+ * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/8-slice/test3_slice.go
+ */
+
 package main
 
 import "fmt"

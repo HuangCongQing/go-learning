@@ -1,4 +1,14 @@
+/*
+ * @Description: map {key  value}声明
+ * @Author: HCQ
+ * @Company(School): UCAS
+ * @Email: 1756260160@qq.com
+ * @Date: 2021-02-14 23:08:07
+ * @LastEditTime: 2021-02-16 12:01:17
+ * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/9-map/test_map1.go
+ */
 package main
+
 
 import "fmt"
 

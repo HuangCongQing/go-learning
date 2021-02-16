@@ -1,3 +1,12 @@
+/*
+ * @Description: 继承
+ * @Author: HCQ
+ * @Company(School): UCAS
+ * @Email: 1756260160@qq.com
+ * @Date: 2021-02-14 23:08:07
+ * @LastEditTime: 2021-02-16 12:21:35
+ * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/10-OOP/test3_class2.go
+ */
 package main
 
 import "fmt"
@@ -15,7 +24,7 @@ func (this *Human) Walk() {
 	fmt.Println("Human.Walk()...")
 }
 
-//=================
+//=================继承
 
 type SuperMan struct {
 	Human //SuperMan类继承了Human类的方法

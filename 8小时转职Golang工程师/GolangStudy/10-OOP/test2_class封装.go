@@ -1,3 +1,12 @@
+/*
+ * @Description: 类class  封装
+ * @Author: HCQ
+ * @Company(School): UCAS
+ * @Email: 1756260160@qq.com
+ * @Date: 2021-02-14 23:08:07
+ * @LastEditTime: 2021-02-16 12:20:12
+ * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/10-OOP/test2_class.go
+ */
 package main
 
 import "fmt"
@@ -11,7 +20,7 @@ type Hero struct {
 }
 
 /*
-func (this Hero) Show() {
+func (this Hero) Show() {     // this Hero 绑定到Hero
 	fmt.Println("Name = ", this.Name)
 	fmt.Println("Ad = ", this.Ad)
 	fmt.Println("Level = ", this.Level)

@@ -1,3 +1,12 @@
+/*
+ * @Description: 结构体
+ * @Author: HCQ
+ * @Company(School): UCAS
+ * @Email: 1756260160@qq.com
+ * @Date: 2021-02-14 23:08:07
+ * @LastEditTime: 2021-02-16 12:08:53
+ * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/10-OOP/test1_struct.go
+ */
 package main
 
 import "fmt"
@@ -32,7 +41,7 @@ func main() {
 	book1.title = "Golang"
 	book1.auth = "zhang3"
 
-	fmt.Printf("%v\n", book1)
+	fmt.Printf("%v\n", book1)  // {Golang zhang3}
 
 	changeBook(book1)
 

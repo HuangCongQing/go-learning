@@ -1,8 +1,19 @@
+<!--
+ * @Description: https://www.yuque.com/huangzhongqing/lang/xob788
+ * @Author: HCQ
+ * @Company(School): UCAS
+ * @Email: 1756260160@qq.com
+ * @Date: 2023-08-17 21:52:06
+ * @LastEditTime: 2023-08-17 21:56:18
+ * @FilePath: /go-learning/README.md
+-->
 # go-learning
 
 go-language 学习（2021年寒假）
 
 开发环境: `go version go1.15.8 linux/amd64`
+
+* Docs: https://www.yuque.com/huangzhongqing/lang/xob788
 
 ### Strength
 

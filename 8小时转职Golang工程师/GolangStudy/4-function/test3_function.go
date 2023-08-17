@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-02-14 23:08:07
- * @LastEditTime: 2021-02-15 22:34:25
+ * @LastEditTime: 2023-08-17 23:57:41
  * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/4-function/test3_function.go
  */
  package main
@@ -65,10 +65,11 @@
  func main() {
 	 c := foo1("abc", 555)
 	 fmt.Println("c = ", c)
- 
+	 // 匿名
 	 ret1, ret2 := foo2("haha", 999)
 	 fmt.Println("ret1 = ", ret1, " ret2 = ", ret2)
- 
+	
+	 //  有形参名字
 	 ret1, ret2 = foo3("foo3", 333)
 	 fmt.Println("ret1 = ", ret1, " ret2 = ", ret2)
  

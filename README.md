@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2023-08-17 21:52:06
- * @LastEditTime: 2023-08-17 22:32:00
+ * @LastEditTime: 2023-08-17 23:02:04
  * @FilePath: /go-learning/README.md
 -->
 # go-learning
@@ -39,14 +39,18 @@ go run hello.go # 编译+运行一块
 
 ### 教程
 
-#### 8小时转职Golang工程师
+#### 1 8小时转职Golang工程师
 
 * 视频：https://www.bilibili.com/video/BV1gf4y1r79E
 * 笔记：[8小时转职Golang工程师](8小时转职Golang工程师)
-* 代码：[code](8小时转职Golang工程师\GolangStudy)
+    * https://www.yuque.com/huangzhongqing/lang/zispls
+* 代码：[code](8小时转职Golang工程师/GolangStudy)
 
 
+#### 2 后端开发
 
+* 笔记：https://www.yuque.com/huangzhongqing/lang/egqag56f5752e3fg
+* 代码：[backend-go](backend-go)
 
 ### Reference
 * https://github.com/aceld/golang

@@ -1,7 +1,7 @@
 package main
 
 /*
-	四种变量的声明方式
+	四种变量的声明方式 https://www.yuque.com/huangzhongqing/lang/qso8oc#KPiv3
 */
 
 import (

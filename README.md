@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2023-08-17 21:52:06
- * @LastEditTime: 2023-08-17 21:56:18
+ * @LastEditTime: 2023-08-17 22:32:00
  * @FilePath: /go-learning/README.md
 -->
 # go-learning
@@ -15,12 +15,27 @@ go-language 学习（2021年寒假）
 
 * Docs: https://www.yuque.com/huangzhongqing/lang/xob788
 
+
+### 运行
+```shell
+# 复杂
+go build hello.go # 编译
+./hello # 运行
+
+# 常用
+go run hello.go # 编译+运行一块
+
+```
+
+
+
 ### Strength
 
 * 开发效率，运行效率皆可
 * 支持并发，最大的优势
 * gc垃圾回收
 * 适用于服务器编程，分布式系统，网络编程，内存数据库，云平台
+
 
 ### 教程
 
@@ -29,6 +44,9 @@ go-language 学习（2021年寒假）
 * 视频：https://www.bilibili.com/video/BV1gf4y1r79E
 * 笔记：[8小时转职Golang工程师](8小时转职Golang工程师)
 * 代码：[code](8小时转职Golang工程师\GolangStudy)
+
+
+
 
 ### Reference
 * https://github.com/aceld/golang

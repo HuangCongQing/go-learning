@@ -1,10 +1,10 @@
 /*
- * @Description: 结构体
+ * @Description: 结构体 https://www.yuque.com/huangzhongqing/lang/qso8oc#CFNl7
  * @Author: HCQ
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-02-14 23:08:07
- * @LastEditTime: 2021-02-16 12:08:53
+ * @LastEditTime: 2023-08-20 18:17:28
  * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/10-OOP/test1_struct.go
  */
 package main
@@ -26,7 +26,7 @@ func changeBook(book Book) {
 }
 
 func changeBook2(book *Book) {
-	//指针传递
+	//指针传递<<<<<<<<<<<,,
 	book.auth = "777"
 }
 

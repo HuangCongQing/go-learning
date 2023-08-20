@@ -1,10 +1,10 @@
 /*
- * @Description: 切片的追加和截取
+ * @Description: 切片的追加和截取 https://www.yuque.com/huangzhongqing/lang/qso8oc#ORWm5
  * @Author: HCQ
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-02-14 23:08:07
- * @LastEditTime: 2021-02-16 11:53:36
+ * @LastEditTime: 2023-08-20 15:36:12
  * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/8-slice/test4_slice.go
  */
 

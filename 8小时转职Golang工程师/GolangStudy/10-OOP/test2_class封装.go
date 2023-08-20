@@ -4,8 +4,8 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-02-14 23:08:07
- * @LastEditTime: 2021-02-16 12:20:12
- * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/10-OOP/test2_class.go
+ * @LastEditTime: 2023-08-20 18:58:32
+ * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/10-OOP/test2_class封装.go
  */
 package main
 
@@ -16,7 +16,7 @@ type Hero struct {
 	//如果说类的属性首字母大写, 表示该属性是对外能够访问的，否则的话只能够类的内部访问
 	Name  string
 	Ad    int
-	level int
+	level int  // 小写，私有属性
 }
 
 /*
@@ -35,6 +35,8 @@ func (this Hero) SetName(newName string) {
 	this.Name = newName
 }
 */
+
+// 必须加*  指针
 func (this *Hero) Show() {
 	fmt.Println("Name = ", this.Name)
 	fmt.Println("Ad = ", this.Ad)

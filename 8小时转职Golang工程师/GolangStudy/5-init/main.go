@@ -2,11 +2,12 @@
 /*
  * @Description:  import导包路径问题与init方法调用流程
 • https://www.bilibili.com/video/BV1gf4y1r79E?p=8
+https://www.yuque.com/huangzhongqing/lang/qso8oc#mSTmR
  * @Author: HCQ
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-02-14 23:08:07
- * @LastEditTime: 2021-02-15 23:31:05
+ * @LastEditTime: 2023-08-20 11:35:05
  * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/5-init/main.go
  */
 
@@ -27,3 +28,5 @@ func main() {
 	mylib2.Lib2Test()
 	//Lib2Test()
 }
+
+// init早于main函数执行，有些操作可以放在init函数中

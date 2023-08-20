@@ -7,7 +7,7 @@ https://www.yuque.com/huangzhongqing/lang/qso8oc#mSTmR
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-02-14 23:08:07
- * @LastEditTime: 2023-08-20 11:35:05
+ * @LastEditTime: 2023-08-20 12:13:29
  * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/5-init/main.go
  */
 
@@ -16,7 +16,7 @@ package main
 
 // 导入的包必须要使用
 import ( // 注意路径path
-	_ "8小时转职Golang工程师/GolangStudy/5-init/lib1"  // _ 下划线表示匿名
+	_ "8小时转职Golang工程师/GolangStudy/5-init/lib1"  // _ 下划线表示匿名 场景是只需要调用init方法，不调用其他函数
 	mylib2 "8小时转职Golang工程师/GolangStudy/5-init/lib2"    // 别名
 	//. "GolangStudy/5-init/lib2"     // 直接使用包名字
 )

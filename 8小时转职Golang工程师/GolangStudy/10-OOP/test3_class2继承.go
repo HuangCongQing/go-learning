@@ -4,8 +4,8 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-02-14 23:08:07
- * @LastEditTime: 2021-02-16 12:21:35
- * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/10-OOP/test3_class2.go
+ * @LastEditTime: 2023-08-20 19:11:11
+ * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/10-OOP/test3_class2继承.go
  */
 package main
 
@@ -25,9 +25,8 @@ func (this *Human) Walk() {
 }
 
 //=================继承
-
 type SuperMan struct {
-	Human //SuperMan类继承了Human类的方法
+	Human //SuperMan类继承了Human类的方法<<<<<<<<<<<<<<<<<
 
 	level int
 }
@@ -55,15 +54,15 @@ func main() {
 	h.Walk()
 
 	//定义一个子类对象
-	//s := SuperMan{Human{"li4", "female"}, 88}
+	//s := SuperMan{Human{"li4", "female"}, 88}  // 下面4行可替代
 	var s SuperMan
 	s.name = "li4"
 	s.sex = "male"
 	s.level = 88
 
 	s.Walk() //父类的方法
-	s.Eat()  //子类的方法
-	s.Fly()  //子类的方法
+	s.Eat()  //子类的方法(重写父类)
+	s.Fly()  //子类的方法(重写父类)
 
 	s.Print()
 }

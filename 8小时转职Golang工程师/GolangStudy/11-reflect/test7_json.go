@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-02-14 23:08:07
- * @LastEditTime: 2023-08-20 20:35:31
+ * @LastEditTime: 2023-08-20 20:36:40
  * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/11-reflect/test7_json.go
  */
 package main
@@ -24,7 +24,7 @@ type Movie struct {
 func main() {
 	movie := Movie{"喜剧之王", 2000, 10, []string{"xingye", "zhangbozhi"}}
 
-	//编码的过程  结构体---> json
+	//1 编码的过程  结构体---> json
 	jsonStr, err := json.Marshal(movie) // 匹配标签里的key是json
 	if err != nil {
 		fmt.Println("json marshal error", err)
@@ -33,7 +33,7 @@ func main() {
 
 	fmt.Printf("jsonStr = %s\n", jsonStr)   // jsonStr = {"title":"喜剧之王","year":2000,"rmb":10,"actors":["xingye","zhangbozhi"]}
 
-	//解码的过程 jsonstr ---> 结构体
+	//2 解码的过程 jsonstr ---> 结构体
 	//jsonStr = {"title":"喜剧之王","year":2000,"rmb":10,"actors":["xingye","zhangbozhi"]}
 	myMovie := Movie{}
 	err = json.Unmarshal(jsonStr, &myMovie)

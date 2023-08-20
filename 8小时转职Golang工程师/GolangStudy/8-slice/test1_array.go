@@ -1,16 +1,17 @@
 /*
- * @Description: 
+ * @Description: https://www.yuque.com/huangzhongqing/lang/qso8oc#soclj
  * @Author: HCQ
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-02-14 23:08:07
- * @LastEditTime: 2021-02-16 11:33:32
+ * @LastEditTime: 2023-08-20 15:18:19
  * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/8-slice/test1_array.go
  */
 package main
 
 import "fmt"
 
+// 数组传参
 func printArray(myArray [4]int) {
 	//值拷贝
 
@@ -23,7 +24,7 @@ func printArray(myArray [4]int) {
 
 
 func main() {
-	//固定长度的数组
+	//1 固定长度的数组
 	var myArray1 [10]int
 
 	myArray2 := [10]int{1,2,3,4}
@@ -34,11 +35,12 @@ func main() {
 		fmt.Println(myArray1[i])	// 默认值为0
 	}
 
+	// range关键字
 	for index, value := range myArray2 {
 		fmt.Println("index = ", index, ", value = ", value)
 	}
 
-	//查看数组的数据类型
+	//2 查看数组的数据类型  -> %T
 	fmt.Printf("myArray1 types = %T\n", myArray1)
 	fmt.Printf("myArray2 types = %T\n", myArray2)
 	fmt.Printf("myArray3 types = %T\n", myArray3)

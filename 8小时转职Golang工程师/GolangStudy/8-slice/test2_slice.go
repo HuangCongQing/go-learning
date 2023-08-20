@@ -4,13 +4,14 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-02-14 23:08:07
- * @LastEditTime: 2021-02-16 11:39:00
+ * @LastEditTime: 2023-08-20 15:22:58
  * @FilePath: /go-learning/8小时转职Golang工程师/GolangStudy/8-slice/test2_slice.go
  */
 package main
 
 import "fmt"
 
+// 引用传递
 func printArray(myArray []int) {
 	//引用传递
 	// _ 表示匿名的变量
@@ -18,7 +19,7 @@ func printArray(myArray []int) {
 		fmt.Println("value = ", value)
 	}
 
-	myArray[0] = 100
+	myArray[0] = 100 // 引用传递
 }
 
 func main() {

@@ -1,3 +1,12 @@
+/*
+ * @Description: https://www.bilibili.com/video/BV13z4y1a7ZJ?p=3&vd_source=617461d43c4542e4c5a3ed54434a0e55
+ * @Author: HCQ
+ * @Company(School): UCAS
+ * @Email: 1756260160@qq.com
+ * @Date: 2023-08-20 02:45:24
+ * @LastEditTime: 2023-08-20 22:21:26
+ * @FilePath: /go-learning/backend-go/TodoList-main/repository/db/dao/init.go
+ */
 package dao
 
 import (
@@ -11,7 +20,7 @@ import (
 	"gorm.io/gorm/logger"
 	"gorm.io/gorm/schema"
 
-	conf "to-do-list/config"
+	conf "to-do-list/config"  //配置
 )
 
 var _db *gorm.DB
@@ -24,6 +33,7 @@ func MySQLInit() {
 	} else {
 		ormLogger = logger.Default
 	}
+	// mysql数据库
 	db, err := gorm.Open(mysql.New(mysql.Config{
 		DSN:                       conn,  // DSN data source name
 		DefaultStringSize:         256,   // string 类型字段的默认长度

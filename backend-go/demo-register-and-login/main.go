@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2023-08-23 01:00:14
- * @LastEditTime: 2023-08-23 01:03:45
+ * @LastEditTime: 2023-08-23 01:08:55
  * @FilePath: /go-learning/backend-go/demo-register-and-login/main.go
  */
 package main
@@ -25,7 +25,7 @@ func main() {
 	//创建一个默认的路由引擎
 	r := gin.Default()
 
-	//启动路由
+	//启动路由  backend-go/demo-register-and-login/routes.go
 	CollectRoutes(r)
 
 	//在9090端口启动服务

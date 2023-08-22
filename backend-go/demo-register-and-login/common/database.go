@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2023-08-23 00:58:50
- * @LastEditTime: 2023-08-23 01:02:23
+ * @LastEditTime: 2023-08-23 01:11:15
  * @FilePath: /go-learning/backend-go/demo-register-and-login/common/database.go
  */
 package common
@@ -48,6 +48,7 @@ func InitDB() *gorm.DB {
 
 }
 
+// 
 func GetDB() *gorm.DB{
 	return DB
 }

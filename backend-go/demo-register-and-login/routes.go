@@ -4,13 +4,13 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2023-08-23 00:59:55
- * @LastEditTime: 2023-08-23 01:00:00
+ * @LastEditTime: 2023-08-23 01:08:39
  * @FilePath: /go-learning/backend-go/demo-register-and-login/routes.go
  */
 package main
 
 import (
-	"demo/controller"
+	"demo/controller"  // 用户相关的函数，如注册、登录
 
 	"github.com/gin-gonic/gin"
 )

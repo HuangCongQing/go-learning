@@ -11,9 +11,10 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
+// 注册处理逻辑
 func Register(ctx *gin.Context) {
 
-	db := common.GetDB()
+	db := common.GetDB()  // 
 
 	//获取参数
 	//此处使用Bind()函数，可以处理不同格式的前端数据
@@ -81,13 +82,14 @@ func Register(ctx *gin.Context) {
 }
 
 
+// 登陆处理逻辑
 func Login(ctx *gin.Context) {
 
 	db := common.GetDB()
 
 	//获取参数
 	//此处使用Bind()函数，可以处理不同格式的前端数据
-	var requestUser model.User
+	var requestUser model.User  // backend-go/demo-register-and-login/model/user.go
 	ctx.Bind(&requestUser)
 	telephone := requestUser.Telephone
 	password := requestUser.Password

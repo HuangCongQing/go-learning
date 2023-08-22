@@ -11,7 +11,7 @@
 
 go-language 学习（2021年寒假）
 
-开发环境: `go version go1.15.8 linux/amd64`
+开发环境: `go version go1.20 linux/amd64`
 
 * Docs: https://www.yuque.com/huangzhongqing/lang/xob788
 

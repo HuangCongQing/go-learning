@@ -10,6 +10,7 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
+// User类
 type User struct {
 	gorm.Model
 	Name      string `gorm:"varchar(20);not null"`
@@ -25,9 +26,9 @@ func main() {
 	defer db.Close()
 
 	//创建一个默认的路由引擎
-	r := gin.Default()
+	r := gin.Default() // router
 
-	//注册
+	//1 注册<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 	r.POST("/register", func(ctx *gin.Context) {
 
 		//获取参数
@@ -69,7 +70,7 @@ func main() {
 			return
 		}
 
-		//创建用户
+		//创建用户db.Create
 		hasedPassword, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
 		if err != nil {
 			ctx.JSON(http.StatusUnprocessableEntity, gin.H{
@@ -78,6 +79,7 @@ func main() {
 			})
 			return
 		}
+		// User类
 		newUser := User{
 			Name:      name,
 			Telephone: telephone,
@@ -92,9 +94,8 @@ func main() {
 		})
 	})
 
-	//登录
+	//2 登录<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 	r.POST("/login", func(ctx *gin.Context) {
-
 		//获取参数
 		telephone := ctx.PostForm("telephone")
 		password := ctx.PostForm("password")
@@ -146,6 +147,7 @@ func main() {
 	panic(r.Run(":9090"))
 }
 
+// 数据库初始化
 func InitDB() *gorm.DB {
 	driverName := "mysql"
 	host := "127.0.0.1"
@@ -154,6 +156,7 @@ func InitDB() *gorm.DB {
 	username := "root"
 	password := "123456"
 	charset := "utf8"
+	// 输出打印
 	args := fmt.Sprintf("%s:%s@(%s:%s)/%s?charset=%s&parseTime=true",
 		username,
 		password,
@@ -162,6 +165,7 @@ func InitDB() *gorm.DB {
 		database,
 		charset)
 
+	// 打开数据库
 	db, err := gorm.Open(driverName, args)
 	if err != nil {
 		panic("failed to connect database, err:" + err.Error())

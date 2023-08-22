@@ -1,9 +1,9 @@
-
 package main
 
 import (
 	"fmt"
 	"net/http"
+
 	"github.com/gin-gonic/gin"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
@@ -132,6 +132,7 @@ func main() {
 				"code":    422,
 				"message": "密码错误",
 			})
+			return
 		}
 
 		//返回结果
@@ -149,9 +150,9 @@ func InitDB() *gorm.DB {
 	driverName := "mysql"
 	host := "127.0.0.1"
 	port := "3306"
-	database := "demo"
+	database := "demo" // 数据库
 	username := "root"
-	password := "你的mysql密码"
+	password := "123456"
 	charset := "utf8"
 	args := fmt.Sprintf("%s:%s@(%s:%s)/%s?charset=%s&parseTime=true",
 		username,

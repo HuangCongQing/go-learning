@@ -44,6 +44,7 @@ func main() {
 			})
 			return
 		}
+		fmt.Println("len(telephone) = ", len(telephone)) // 无效？？？？
 		if len(telephone) != 11 {
 			ctx.JSON(http.StatusUnprocessableEntity, gin.H{
 				"code":    422,

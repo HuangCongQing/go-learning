@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2023-08-17 21:52:06
- * @LastEditTime: 2023-08-23 01:07:04
+ * @LastEditTime: 2023-08-23 10:34:25
  * @FilePath: /go-learning/README.md
 -->
 # go-learning
@@ -59,7 +59,7 @@ go run hello.go # 编译+运行一块
 * reference: https://github.com/CocaineCong/todolist
 
 
-#### 2.2  backend-go/demo-register-and-login
+#### 2.2 【example】demo-register-and-login
 * code: [backend-go/demo-register-and-login](backend-go/demo-register-and-login)
 * docs: https://www.yuque.com/huangzhongqing/lang/pgvphn4tfh3k2upm
 

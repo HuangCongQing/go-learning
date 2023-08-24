@@ -3,7 +3,7 @@
 package controller
 
 import (
-	"demo/common"
+	"demo/common" //demo是go.sum的module名字
 	"demo/model"
 	"net/http"
 
@@ -14,12 +14,12 @@ import (
 // 注册处理逻辑
 func Register(ctx *gin.Context) {
 
-	db := common.GetDB()  // 
+	db := common.GetDB() // 得到数据库 common/database.go
 
 	//获取参数
 	//此处使用Bind()函数，可以处理不同格式的前端数据
 	var requestUser model.User
-	ctx.Bind(&requestUser)
+	ctx.Bind(&requestUser) // 绑定用户输入的数据<<<<<<<<<<<<
 	name := requestUser.Name
 	telephone := requestUser.Telephone
 	password := requestUser.Password
@@ -67,12 +67,13 @@ func Register(ctx *gin.Context) {
 		})
 		return
 	}
-	newUser :=model.User{
+	// 创建
+	newUser := model.User{
 		Name:      name,
 		Telephone: telephone,
-		Password:  string(hasedPassword),
+		Password:  string(hasedPassword), // 密码加密
 	}
-	db.Create(&newUser)
+	db.Create(&newUser) //
 
 	//返回结果
 	ctx.JSON(http.StatusOK, gin.H{
@@ -81,7 +82,6 @@ func Register(ctx *gin.Context) {
 	})
 }
 
-
 // 登陆处理逻辑
 func Login(ctx *gin.Context) {
 
@@ -89,11 +89,11 @@ func Login(ctx *gin.Context) {
 
 	//获取参数
 	//此处使用Bind()函数，可以处理不同格式的前端数据
-	var requestUser model.User  // backend-go/demo-register-and-login/model/user.go
+	var requestUser model.User // backend-go/demo-register-and-login/model/user.go
 	ctx.Bind(&requestUser)
 	telephone := requestUser.Telephone
 	password := requestUser.Password
-	
+
 	//数据验证
 	if len(telephone) != 11 {
 		ctx.JSON(http.StatusUnprocessableEntity, gin.H{
@@ -109,7 +109,7 @@ func Login(ctx *gin.Context) {
 		})
 		return
 	}
-	
+
 	//判断手机号是否存在
 	var user model.User
 	db.Where("telephone = ?", telephone).First(&user)
@@ -120,7 +120,7 @@ func Login(ctx *gin.Context) {
 		})
 		return
 	}
-	
+
 	//判断密码是否正确
 	if err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(password)); err != nil {
 		ctx.JSON(http.StatusUnprocessableEntity, gin.H{
@@ -128,7 +128,7 @@ func Login(ctx *gin.Context) {
 			"message": "密码错误",
 		})
 	}
-	
+
 	//返回结果
 	ctx.JSON(http.StatusOK, gin.H{
 		"code":    200,

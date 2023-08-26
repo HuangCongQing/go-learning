@@ -5,6 +5,7 @@ package controller
 import (
 	"demo/common" //demo是go.sum的module名字
 	"demo/model"
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -25,6 +26,8 @@ func Register(ctx *gin.Context) {
 	password := requestUser.Password
 
 	//数据验证
+	// len(name) =  0 name =   telephone =   password =
+	fmt.Println("len(name) = ", len(name), "name = ", name, "telephone = ", telephone, "password = ", password)
 	if len(name) == 0 {
 		ctx.JSON(http.StatusUnprocessableEntity, gin.H{
 			"code":    422,

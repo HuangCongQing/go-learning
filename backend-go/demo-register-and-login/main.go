@@ -4,15 +4,16 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2023-08-23 01:00:14
- * @LastEditTime: 2023-08-23 01:08:55
+ * @LastEditTime: 2023-08-27 01:08:59
  * @FilePath: /go-learning/backend-go/demo-register-and-login/main.go
  */
 package main
 
 import (
 	"demo/common"
+
 	"github.com/gin-gonic/gin"
-	_ "github.com/go-sql-driver/mysql" //fix:   sql: unknown driver "mysql" (forgotten import?)  
+	_ "github.com/go-sql-driver/mysql" //fix:   sql: unknown driver "mysql" (forgotten import?)
 )
 
 func main() {

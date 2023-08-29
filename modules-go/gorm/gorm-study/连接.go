@@ -37,10 +37,10 @@ func init() {
 }
 
 type Student struct {
-	ID    uint
-	Name  string
-	Age   int
-	Email *string // 使用*号可以 默认是空字符串
+	ID    uint    `gorm:"size:4"` //修改字段大小
+	Name  string  `gorm:"size:4"`
+	Age   int     `gorm:"size:4"`
+	Email *string `gorm:"size:4"` // 使用*号可以 默认是空字符串
 }
 
 func main() {

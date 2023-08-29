@@ -37,9 +37,10 @@ func init() {
 }
 
 type Student struct {
-	ID   uint
-	Name string
-	Age  int
+	ID    uint
+	Name  string
+	Age   int
+	Email *string // 使用*号可以 默认是空字符串
 }
 
 func main() {

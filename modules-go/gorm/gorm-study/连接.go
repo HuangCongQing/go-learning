@@ -44,5 +44,5 @@ type Student struct {
 
 func main() {
 	fmt.Println(DB)
-	DB.AutoMigrate(&Student{})
+	DB.Debug().AutoMigrate(&Student{}) // .Debug()日志记录
 }

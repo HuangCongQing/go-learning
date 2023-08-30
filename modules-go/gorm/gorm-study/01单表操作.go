@@ -83,11 +83,11 @@ func main() {
 	//fmt.Println(studentList)
 
 	// Save更新=======================================
-	var student Student
-	DB.Take(&student, 11) // 查询
-	student.Name = "更新"
-	//只会更新select选中的字段
-	DB.Select("name").Save(&student) // UPDATE `students` SET `name`='更新',`age`=11,`gender`=true,`email`='hcq@mail.com' WHERE `id` = 11
+	//var student Student
+	//DB.Take(&student, 11) // 查询
+	//student.Name = "更新"
+	////只会更新select选中的字段
+	//DB.Select("name").Save(&student) // UPDATE `students` SET `name`='更新',`age`=11,`gender`=true,`email`='hcq@mail.com' WHERE `id` = 11
 
 	//批量更新
 	var studentList []Student
@@ -100,5 +100,13 @@ func main() {
 		"email":  &email,
 		"gender": false,
 	})
+
+	// 删除========================================================
+	//var student Student
+	//DB.Delete(&student, 13)
+	//// 批量删除
+	//DB.Delete(&Student{}, []int{1, 2, 3})
+	//// 查询到的切片列表
+	//db.Delete(&studentList)
 
 }

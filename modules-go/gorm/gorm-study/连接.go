@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
+	"gorm.io/gorm/logger"
 )
 
 // 存储为全局变量
@@ -20,6 +21,9 @@ func init() {
 	// root:root@tcp(127.0.0.1:3306)/gorm?
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local&timeout=%s", username, password, host, port, Dbname, timeout)
 	//连接MYSQL, 获得DB类型实例，用于后面的数据库读写操作。
+	var mysqlLogger logger.Interface
+	// 要显示的日志等级
+	mysqlLogger = logger.Default.LogMode(logger.Info)
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
 		//SkipDefaultTransaction: true, // 默认跳过事务
 		//NamingStrategy: schema.NamingStrategy{
@@ -27,6 +31,7 @@ func init() {
 		//	SingularTable: false, // 单数表名
 		//	NoLowerCase:   false, // 关闭小写转换
 		//},
+		Logger: mysqlLogger,
 	})
 	if err != nil {
 		panic("连接数据库失败, error=" + err.Error())
@@ -36,14 +41,16 @@ func init() {
 
 }
 
-type Student struct {
-	ID    uint    `gorm:"size:4"` //修改字段大小
-	Name  string  `gorm:"size:4"`
-	Age   int     `gorm:"size:4"`
-	Email *string `gorm:"size:4"` // 使用*号可以 默认是空字符串
-}
+//type Student struct {
+//	ID    uint    `gorm:"size:4"` //修改字段大小
+//	Name  string  `gorm:"size:4"`
+//	Age   int     `gorm:"size:4"`
+//	Email *string `gorm:"size:4"` // 使用*号可以 默认是空字符串
+//}
 
-func main() {
-	fmt.Println(DB)
-	DB.Debug().AutoMigrate(&Student{}) // .Debug()日志记录
-}
+//运行2个go文件，只能有一个main函数《《
+
+//func main() {
+//	fmt.Println(DB)
+//	DB.Debug().AutoMigrate(&Student{}) // .Debug()日志记录
+//}

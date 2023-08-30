@@ -1,25 +1,20 @@
 package main
 
-import (
-	"fmt"
-	"gorm.io/gorm"
-)
-
-type Student struct {
-	ID     uint   `gorm:"size:3"`
-	Name   string `gorm:"size:8" json:"name"` // Name变成小写name
-	Age    int    `gorm:"size:3"`
-	Gender bool
-	Email  *string `gorm:"size:32"`
-}
-
-// 在插入一条记录到数据库的时候，我希望做点事情
-// 更新email
-func (user *Student) BeforeCreate(tx *gorm.DB) (err error) {
-	email := fmt.Sprintf("%s@qq.com", user.Name)
-	user.Email = &email
-	return nil
-}
+//type Student struct {
+//	ID     uint   `gorm:"size:3"`
+//	Name   string `gorm:"size:8" json:"name"` // Name变成小写name
+//	Age    int    `gorm:"size:3"`
+//	Gender bool
+//	Email  *string `gorm:"size:32"`
+//}
+//
+//// 在插入一条记录到数据库的时候，我希望做点事情
+//// 更新email
+//func (user *Student) BeforeCreate(tx *gorm.DB) (err error) {
+//	email := fmt.Sprintf("%s@qq.com", user.Name)
+//	user.Email = &email
+//	return nil
+//}
 
 func main() {
 	//DB.AutoMigrate(&Student{})

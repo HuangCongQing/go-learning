@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"gorm.io/gorm"
+)
 
 type Student struct {
 	ID     uint   `gorm:"size:3"`
@@ -119,12 +122,12 @@ func main() {
 	//fmt.Println(countList)
 
 	//
-	type AggeGroup struct {
-		Gender   int
-		Count    int    // `gorm:"column:count(id)"`
-		NameList string // `gorm:"column:group_concat(name)"`
-	}
-	var groupList []AggeGroup
+	//type AggeGroup struct {
+	//	Gender   int
+	//	Count    int    // `gorm:"column:count(id)"`
+	//	NameList string // `gorm:"column:group_concat(name)"`
+	//}
+	//var groupList []AggeGroup
 	//DB.Model(Student{}).
 	//	Select(
 	//		"group_concat(name) as name_list",
@@ -136,10 +139,29 @@ func main() {
 	// [{0 3 李琦,晓梅,如燕} {1 6 李元芳,张武,枫枫,刘大,李武,魔灵}]
 
 	// 原生sql
+	//DB.Raw("SELECT count(id) as count, gender, group_concat(name) as name_list FROM students GROUP BY gender").Scan(&groupList)
+	//fmt.Println(groupList)
 
-	DB.Raw("SELECT count(id) as count, gender, group_concat(name) as name_list FROM students GROUP BY gender").Scan(&groupList)
-	fmt.Println(groupList)
+	// 子查询  https://www.yuque.com/huangzhongqing/lang/tp83lvblgq67puea#ZhxpJ
+	//DB.Model(Student{}).Where("age > (?)", DB.Model(Student{}).Select("avg(age)")).Find(&studentList)
+	//fmt.Println(studentList)
 
+	// 命名参数
+	//DB.Where("name = @name and age = @age", map[string]any{"name": "枫枫", "age": 23}).Find(&studentList)
+	//fmt.Println(studentList)
+
+	// find 到map
+	var res []map[string]any
+	DB.Table("students").Scopes(Age23).Find(&res)
+	fmt.Println(res)
+
+	// 查询函数封装
+
+}
+
+// scopes函数
+func Age23(db *gorm.DB) *gorm.DB {
+	return db.Where("age > ?", 23)
 }
 
 func PtrString(email string) *string {

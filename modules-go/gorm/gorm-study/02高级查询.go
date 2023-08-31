@@ -95,6 +95,51 @@ func main() {
 	// 排序 dasc(降序)  asc(升序)==============================================
 	DB.Order("age asc").Find(&studentList)
 	fmt.Println(studentList)
+
+	// 分页查询
+	//DB.Limit(2).Offset(2).Find(&studentList)
+	//fmt.Println(studentList)
+	//   通用写法
+	// 一页多少条
+	//limit := 2
+	//// 第几页
+	//page := 3
+	//offset := (page - 1) * limit
+	//DB.Limit(limit).Offset(offset).Find(&studentList)
+	//fmt.Println(studentList)
+
+	// 去重
+	//var ageList []int
+	//DB.Model(Student{}).Select("age").Scan(&ageList)
+	//fmt.Println(ageList)
+
+	// 分组查询
+	//var countList []int
+	//DB.Model(Student{}).Select("count(id)").Group("gender").Scan(&countList)
+	//fmt.Println(countList)
+
+	//
+	type AggeGroup struct {
+		Gender   int
+		Count    int    // `gorm:"column:count(id)"`
+		NameList string // `gorm:"column:group_concat(name)"`
+	}
+	var groupList []AggeGroup
+	//DB.Model(Student{}).
+	//	Select(
+	//		"group_concat(name) as name_list",
+	//		"count(id) as count",
+	//		"gender",
+	//	).
+	//	Group("gender").Scan(&groupList)
+	//fmt.Println(groupList)
+	// [{0 3 李琦,晓梅,如燕} {1 6 李元芳,张武,枫枫,刘大,李武,魔灵}]
+
+	// 原生sql
+
+	DB.Raw("SELECT count(id) as count, gender, group_concat(name) as name_list FROM students GROUP BY gender").Scan(&groupList)
+	fmt.Println(groupList)
+
 }
 
 func PtrString(email string) *string {

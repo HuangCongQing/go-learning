@@ -16,10 +16,12 @@ func main() {
 	r := gin.Default()
 	r.GET("/ping", func(c *gin.Context) {
 		c.JSON(200, gin.H{
+			"code":    200,
 			"message": "pong",
+			"data":    "hcqTODO",
 		})
 	})
-	r.Run() // 监听并在 0.0.0.0:8080 上启动服务
+	r.Run("0.0.0.0:8080") // 监听并在 0.0.0.0:8080 上启动服务
 }
 
 // 访问: http://127.0.0.1:8080/ping

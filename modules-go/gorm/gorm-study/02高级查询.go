@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+
 	"gorm.io/gorm"
 )
 
@@ -95,7 +96,7 @@ func main() {
 	//DB.Model(Student{}).Select("name", "age").Find(&studentList).Scan(&userList)
 	//fmt.Println(userList)
 
-	// 排序 dasc(降序)  asc(升序)==============================================
+	// 排序 desc(降序)  asc(升序)==============================================
 	DB.Order("age asc").Find(&studentList)
 	fmt.Println(studentList)
 

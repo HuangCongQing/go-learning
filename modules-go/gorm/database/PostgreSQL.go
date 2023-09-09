@@ -86,6 +86,6 @@ type UserFeedbackModel struct {
 func main() {
 	fmt.Println(DB)
 	// DB.Debug().AutoMigrate(&Student{}) // .Debug()日志记录
-	// DB.Debug().AutoMigrate(&UserReportModel{}) // 用户举报
-	DB.Debug().AutoMigrate(&UserFeedbackModel{}) // 用户反馈
+	DB.Debug().AutoMigrate(&UserReportModel{}) // 用户举报
+	// DB.Debug().AutoMigrate(&UserFeedbackModel{}) // 用户反馈
 }

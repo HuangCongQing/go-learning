@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"time"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -53,9 +54,37 @@ type Student struct {
 	Email *string `gorm:"size:4"` // 使用*号可以 默认是空字符串
 }
 
+// 用户举报
+type UserReportModel struct {
+	ID          int64     `json:"id" gorm:"column:id;not null;primaryKey;unique;comment:主键"`
+	RelatedId   int64     `json:"related_id" gorm:"column:related_id;comment:举报帖子ID"`
+	RelatedType int       `json:"related_type" gorm:"column:related_type;size:2;comment:帖子类型（目前全是1）"`
+	Reason      *string   `json:"reason" gorm:"column:reason;comment:举报原因"` // 使用*号可以 默认是空字符串
+	CreateTime  time.Time `json:"create_time" gorm:"column:create_time;comment:举报时间"`
+	ReportedId  int64     `json:"reported_id" gorm:"column:reported_id;comment:被举报用户user_id"` // 使用*号可以 默认是空字符串
+	ReporterId  int64     `json:"reporter_id" gorm:"column:reporter_id;comment:举报用户user_id"`
+	Imgs        *string   `json:"imgs" gorm:"column:imgs;comment:举报图片"` // 使用*号可以 默认是空字符串
+	IsDeleted   int       `json:"is_deleted" gorm:"column:is_deleted;size:2;comment:是否已删帖"`
+	IsBanned    int       `json:"is_banned" gorm:"column:is_banned;size:2;comment:是否已禁言"`
+	Processer   int64     `json:"processer" gorm:"column:processer;comment:后端登陆者user_id"`
+}
+
+// 用户反馈
+type UserFeedbackModel struct {
+	UserId      int64     `json:"user_id" gorm:"column:user_id;comment:用户ID"`
+	Content     *string   `json:"content" gorm:"column:content;comment:反馈内容"` // 使用*号可以 默认是空字符串
+	Imgs        *string   `json:"imgs" gorm:"column:imgs;comment:反馈图片"`       // 使用*号可以 默认是空字符串
+	CreateTime  time.Time `json:"create_time" gorm:"column:create_time;comment:举报时间"`
+	platform    int64     `json:"platform" gorm:"column:platform;comment:平台"` // 使用*号可以 默认是空字符串
+	IsProcessed int       `json:"is_processed" gorm:"column:is_processed;size:2;comment:是否已处理"`
+	Processer   int64     `json:"processer" gorm:"column:processer;comment:处理人后端登陆者user_id"`
+}
+
 //运行2个go文件，只能有一个main函数《《
 
 func main() {
 	fmt.Println(DB)
-	DB.Debug().AutoMigrate(&Student{}) // .Debug()日志记录
+	// DB.Debug().AutoMigrate(&Student{}) // .Debug()日志记录
+	// DB.Debug().AutoMigrate(&UserReportModel{}) // 用户举报
+	DB.Debug().AutoMigrate(&UserFeedbackModel{}) // 用户反馈
 }

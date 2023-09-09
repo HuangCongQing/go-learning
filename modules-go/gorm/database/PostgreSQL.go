@@ -74,7 +74,7 @@ type UserFeedbackModel struct {
 	UserId      int64     `json:"user_id" gorm:"column:user_id;comment:用户ID"`
 	Content     *string   `json:"content" gorm:"column:content;comment:反馈内容"` // 使用*号可以 默认是空字符串
 	Imgs        *string   `json:"imgs" gorm:"column:imgs;comment:反馈图片"`       // 使用*号可以 默认是空字符串
-	CreateTime  time.Time `json:"create_time" gorm:"column:create_time;comment:举报时间"`
+	CreateTime  time.Time `json:"create_time" gorm:"column:create_time;comment:反馈时间"`
 	platform    int64     `json:"platform" gorm:"column:platform;comment:平台"` // 使用*号可以 默认是空字符串
 	IsProcessed int       `json:"is_processed" gorm:"column:is_processed;size:2;comment:是否已处理"`
 	Processer   int64     `json:"processer" gorm:"column:processer;comment:处理人后端登陆者user_id"`

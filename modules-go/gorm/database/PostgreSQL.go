@@ -58,7 +58,7 @@ type Student struct {
 
 // 用户举报
 type UserReportModel struct {
-	// ID          int64     `json:"id" gorm:"column:id;not null;primaryKey;unique;comment:主键"`
+	ID          int64     `json:"id" gorm:"column:id;not null;primaryKey;unique;comment:主键"`
 	RelatedId   int64     `json:"related_id" gorm:"column:related_id;comment:举报帖子ID"`
 	RelatedType int       `json:"related_type" gorm:"column:related_type;size:2;defalut:1;comment:帖子类型(目前全是1)"`
 	Reason      *string   `json:"reason" gorm:"column:reason;comment:举报原因"` // 使用*号可以 默认是空字符串
@@ -74,6 +74,7 @@ type UserReportModel struct {
 
 // 用户反馈
 type UserFeedbackModel struct {
+	ID          int64     `json:"id" gorm:"column:id;not null;primaryKey;unique;comment:主键"`
 	UserId      int64     `json:"user_id" gorm:"column:user_id;comment:用户ID"`
 	Content     *string   `json:"content" gorm:"column:content;comment:反馈内容"`      // 使用*号可以 默认是空字符串
 	Imgs        string    `json:"imgs" gorm:"column:imgs;defalut:"";comment:反馈图片"` // 使用*号可以 默认是空字符串

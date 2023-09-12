@@ -63,7 +63,7 @@ type UserReportModel struct {
 	RelatedType int       `json:"related_type" gorm:"column:related_type;size:2;defalut:1;comment:帖子类型(目前全是1)"`
 	Reason      *string   `json:"reason" gorm:"column:reason;comment:举报原因"` // 使用*号可以 默认是空字符串
 	CreateTime  time.Time `json:"create_time" gorm:"column:create_time;comment:举报时间"`
-	platform    *string   `json:"platform" gorm:"column:platform;comment:平台"`                 // 使用*号可以 默认是空字符串
+	Platform    *string   `json:"platform" gorm:"column:platform;comment:平台"`                 // 使用*号可以 默认是空字符串
 	ReportedId  int64     `json:"reported_id" gorm:"column:reported_id;comment:被举报用户user_id"` // 使用*号可以 默认是空字符串
 	ReporterId  int64     `json:"reporter_id" gorm:"column:reporter_id;comment:举报用户user_id"`
 	Imgs        string    `json:"imgs" gorm:"column:imgs;defalut:"";comment:举报图片"` // 使用*号可以 默认是空字符串

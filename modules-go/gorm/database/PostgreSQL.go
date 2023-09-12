@@ -16,11 +16,11 @@ import (
 var DB *gorm.DB
 
 func init() {
-	username := os.Getenv("PGUSER")     //账号
-	password := os.Getenv("PGPASSWORD") //密码<<<
-	host := os.Getenv("PGHOST")         //数据库地址，可以是Ip或者域名
-	port := os.Getenv("PGPORT")         //数据库端口
-	Dbname := os.Getenv("PGNAME")       //数据库名<<<
+	username := os.Getenv("ADMINPGUSER")     //账号
+	password := os.Getenv("ADMINPGPASSWORD") //密码<<<
+	host := os.Getenv("ADMINPGHOST")         //数据库地址，可以是Ip或者域名
+	port := os.Getenv("ADMINPGPORT")         //数据库端口
+	Dbname := os.Getenv("ADMINPGNAME")       //数据库名<<<
 	//连接数据库
 	//连接postgres, 获得DB类型实例，用于后面的数据库读写操作。
 	dsn := fmt.Sprintf("host=%s port=%s user=%s dbname=%s password=%s sslmode=disable", host, port, username, Dbname, password)
@@ -89,6 +89,6 @@ type UserFeedbackModel struct {
 func main() {
 	fmt.Println(DB)
 	// DB.Debug().AutoMigrate(&Student{}) // .Debug()日志记录
-	DB.Debug().AutoMigrate(&UserReportModel{})   // 用户举报
-	DB.Debug().AutoMigrate(&UserFeedbackModel{}) // 用户反馈
+	DB.Debug().AutoMigrate(&UserReportModel{}) // 用户举报
+	// DB.Debug().AutoMigrate(&UserFeedbackModel{}) // 用户反馈
 }

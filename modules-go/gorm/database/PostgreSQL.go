@@ -74,35 +74,38 @@ type UserReportModel struct {
 	IsDeleted        int       `json:"is_deleted" gorm:"column:is_deleted;size:2;defalut:0;comment:是否已删帖"`
 	IsBanned         int       `json:"is_banned" gorm:"column:is_banned;size:2;defalut:0;comment:是否已禁言"`
 	Processer        int64     `json:"processer" gorm:"column:processer;comment:后端登陆者user_id"`
+	ProcesserTime    time.Time `json:"processer_time" gorm:"column:processer_time;comment:处理时间"`
 }
 
 // 用户反馈
 type UserFeedbackModel struct {
-	ID          int64     `json:"id" gorm:"column:id;not null;primaryKey;unique;comment:主键"`
-	UserId      int64     `json:"user_id" gorm:"column:user_id;comment:用户ID"`
-	Content     *string   `json:"content" gorm:"column:content;comment:反馈内容"`      // 使用*号可以 默认是空字符串
-	Imgs        string    `json:"imgs" gorm:"column:imgs;defalut:"";comment:反馈图片"` // 使用*号可以 默认是空字符串
-	CreateTime  time.Time `json:"create_time" gorm:"column:create_time;comment:反馈时间"`
-	Platform    *string   `json:"platform" gorm:"column:platform;comment:平台"` // 使用*号可以 默认是空字符串
-	IsProcessed int       `json:"is_processed" gorm:"column:is_processed;size:2;defalut:0;comment:是否已处理"`
-	Processer   int64     `json:"processer" gorm:"column:processer;comment:处理人后端登陆者user_id"`
+	ID            int64     `json:"id" gorm:"column:id;not null;primaryKey;unique;comment:主键"`
+	UserId        int64     `json:"user_id" gorm:"column:user_id;comment:用户ID"`
+	Content       *string   `json:"content" gorm:"column:content;comment:反馈内容"`      // 使用*号可以 默认是空字符串
+	Imgs          string    `json:"imgs" gorm:"column:imgs;defalut:"";comment:反馈图片"` // 使用*号可以 默认是空字符串
+	CreateTime    time.Time `json:"create_time" gorm:"column:create_time;comment:反馈时间"`
+	Platform      *string   `json:"platform" gorm:"column:platform;comment:平台"` // 使用*号可以 默认是空字符串
+	IsProcessed   int       `json:"is_processed" gorm:"column:is_processed;size:2;defalut:0;comment:是否已处理"`
+	Processer     int64     `json:"processer" gorm:"column:processer;comment:处理人后端登陆者user_id"`
+	ProcesserTime time.Time `json:"processer_time" gorm:"column:processer_time;comment:处理时间"`
 }
 
 // 内容审查
 type ContentCensorModel struct {
-	ID          int64     `json:"id" gorm:"column:id;not null;primaryKey;unique;comment:主键"`
-	TopicId     int64     `json:"topic_id" gorm:"column:topic_id;unique;comment:审查帖子ID"`
-	TopicType   int       `json:"Topic_type" gorm:"column:Topic_type;size:2;defalut:1;comment:帖子类型(目前全是1)"`
-	UserId      int64     `json:"user_id" gorm:"column:user_id;comment:发帖用人ID"`
-	Content     *string   `json:"content" gorm:"column:content;comment:违规内容"`      // 使用*号可以 默认是空字符串
-	Imgs        string    `json:"imgs" gorm:"column:imgs;defalut:"";comment:违规图片"` // 使用*号可以 默认是空字符串
-	Reason      *string   `json:"reason" gorm:"column:reason;comment:违规原因"`        // 使用*号可以 默认是空字符串
-	CreateTime  time.Time `json:"create_time" gorm:"column:create_time;comment:时间"`
-	EncoderData *string   `json:"encoder_data" gorm:"column:encoder_data;comment:帖子ID编码"` // 使用*号可以 默认是空字符串
-	IsPassed    int       `json:"is_passed" gorm:"column:is_passed;size:2;defalut:0;comment:是否放行"`
-	IsRejected  int       `json:"is_rejected" gorm:"column:is_rejected;size:2;defalut:0;comment:是否已拒绝"`
-	IsBanned    int       `json:"is_banned" gorm:"column:is_banned;size:2;defalut:0;comment:是否已禁言"`
-	Processer   int64     `json:"processer" gorm:"column:processer;comment:后端登陆者user_id"`
+	ID            int64     `json:"id" gorm:"column:id;not null;primaryKey;unique;comment:主键"`
+	TopicId       int64     `json:"topic_id" gorm:"column:topic_id;unique;comment:审查帖子ID"`
+	TopicType     int       `json:"topic_type" gorm:"column:topic_type;size:2;defalut:1;comment:帖子类型(目前全是1)"`
+	UserId        int64     `json:"user_id" gorm:"column:user_id;comment:发帖用人ID"`
+	Content       *string   `json:"content" gorm:"column:content;comment:违规内容"`      // 使用*号可以 默认是空字符串
+	Imgs          string    `json:"imgs" gorm:"column:imgs;defalut:"";comment:违规图片"` // 使用*号可以 默认是空字符串
+	Reason        *string   `json:"reason" gorm:"column:reason;comment:违规原因"`        // 使用*号可以 默认是空字符串
+	CreateTime    time.Time `json:"create_time" gorm:"column:create_time;comment:时间"`
+	EncoderData   *string   `json:"encoder_data" gorm:"column:encoder_data;comment:帖子ID编码"` // 使用*号可以 默认是空字符串
+	IsPassed      int       `json:"is_passed" gorm:"column:is_passed;size:2;defalut:0;comment:是否放行"`
+	IsRejected    int       `json:"is_rejected" gorm:"column:is_rejected;size:2;defalut:0;comment:是否已拒绝"`
+	IsBanned      int       `json:"is_banned" gorm:"column:is_banned;size:2;defalut:0;comment:是否已禁言"`
+	Processer     int64     `json:"processer" gorm:"column:processer;comment:后端登陆者user_id"`
+	ProcesserTime time.Time `json:"processer_time" gorm:"column:processer_time;comment:处理时间"`
 }
 
 //运行2个go文件，只能有一个main函数《《
@@ -110,7 +113,7 @@ type ContentCensorModel struct {
 func main() {
 	fmt.Println(DB)
 	// DB.Debug().AutoMigrate(&Student{}) // .Debug()日志记录
-	DB.Debug().AutoMigrate(&UserReportModel{}) // 用户举报
-	// DB.Debug().AutoMigrate(&UserFeedbackModel{})  // 用户反馈
-	// DB.Debug().AutoMigrate(&ContentCensorModel{}) // 内容审查
+	DB.Debug().AutoMigrate(&UserReportModel{})    // 用户举报
+	DB.Debug().AutoMigrate(&UserFeedbackModel{})  // 用户反馈
+	DB.Debug().AutoMigrate(&ContentCensorModel{}) // 内容审查
 }

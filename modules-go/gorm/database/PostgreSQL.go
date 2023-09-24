@@ -85,6 +85,7 @@ type UserFeedbackModel struct {
 	Imgs          string    `json:"imgs" gorm:"column:imgs;defalut:"";comment:反馈图片"` // 使用*号可以 默认是空字符串
 	CreateTime    time.Time `json:"create_time" gorm:"column:create_time;comment:反馈时间"`
 	Platform      *string   `json:"platform" gorm:"column:platform;comment:平台"` // 使用*号可以 默认是空字符串
+	Remark        *string   `json:"remark" gorm:"column:remark;comment:备注信息"`   // 使用*号可以 默认是空字符串
 	IsProcessed   int       `json:"is_processed" gorm:"column:is_processed;size:2;defalut:0;comment:是否已处理"`
 	Processer     int64     `json:"processer" gorm:"column:processer;comment:处理人后端登陆者user_id"`
 	ProcesserTime time.Time `json:"processer_time" gorm:"column:processer_time;comment:处理时间"`

@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2023-08-17 21:52:06
- * @LastEditTime: 2023-08-23 10:34:25
+ * @LastEditTime: 2024-01-14 11:26:23
  * @FilePath: /go-learning/README.md
 -->
 # go-learning
@@ -53,6 +53,8 @@ go run hello.go # 编译+运行一块
 * 代码：[backend-go](backend-go)
 
 
+
+
 #### 2.1 【example】Todo List 备忘录
 * code:[backend-go/TodoList-main](backend-go/TodoList-main)
 * docs:https://www.yuque.com/huangzhongqing/lang/nud0yt6pwgcccyuc
@@ -71,6 +73,12 @@ go run main-origin.go
 go run main.go routes.go
 
 ```
+
+#### gorm学习
+
+* 路径：[gorm](modules-go/gorm/gorm-study)
+* vido：https://www.bilibili.com/video/BV1xg411t7RZ/?p=2&spm_id_from=pageDriver&vd_source=617461d43c4542e4c5a3ed54434a0e55
+
 
 ### Reference
 * https://github.com/aceld/golang

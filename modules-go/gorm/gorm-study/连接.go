@@ -48,7 +48,7 @@ func init() {
 //	Email *string `gorm:"size:4"` // 使用*号可以 默认是空字符串
 //}
 
-//运行2个go文件，只能有一个main函数《《
+// // 运行2个go文件，只能有一个main函数《《
 
 //func main() {
 //	fmt.Println(DB)

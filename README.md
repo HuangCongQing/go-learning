@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2023-08-17 21:52:06
- * @LastEditTime: 2024-01-14 11:26:23
+ * @LastEditTime: 2024-01-14 14:49:14
  * @FilePath: /go-learning/README.md
 -->
 # go-learning
@@ -79,6 +79,15 @@ go run main.go routes.go
 * 路径：[gorm](modules-go/gorm/gorm-study)
 * vido：https://www.bilibili.com/video/BV1xg411t7RZ/?p=2&spm_id_from=pageDriver&vd_source=617461d43c4542e4c5a3ed54434a0e55
 * docs: https://www.yuque.com/huangzhongqing/lang/ybobv2vvrwesb071
+
+
+```shell
+# run
+go run 连接.go 01单表操作.go
+go run 连接.go 02高级查询.go
+go run 连接.go 03一对多.go
+
+```
 
 
 ### Reference

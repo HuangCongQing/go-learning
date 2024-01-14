@@ -78,6 +78,7 @@ go run main.go routes.go
 
 * 路径：[gorm](modules-go/gorm/gorm-study)
 * vido：https://www.bilibili.com/video/BV1xg411t7RZ/?p=2&spm_id_from=pageDriver&vd_source=617461d43c4542e4c5a3ed54434a0e55
+* docs: https://www.yuque.com/huangzhongqing/lang/ybobv2vvrwesb071
 
 
 ### Reference

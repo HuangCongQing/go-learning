@@ -75,14 +75,46 @@ func main() {
 	//DB.Model(&user).Association("Articles").Append(&article)
 
 	//给现有文章关联用户
-	var user User
-	DB.Take(&user, 1)
-
-	var article Article
-	DB.Take(&article, 5)
-
-	DB.Model(&article).Association("User").Append(&user)
+	//var user User
+	//DB.Take(&user, 1)
+	//
+	//var article Article
+	//DB.Take(&article, 5)
+	//
+	//DB.Model(&article).Association("User").Append(&user)
 
 	// 查询 https://www.bilibili.com/video/BV1xg411t7RZ?t=10.2&p=15
+	//var user User
+	//DB.Preload("Articles").Take(&user, 1)
+	////DB.Preload("Articles.User").Take(&user, 1)
+	//fmt.Println(user)
+	//
+	//var article Article
+	//DB.Preload("User").Take(&article, 1)
+	//fmt.Println(article)
 
+	// 带条件的预加载
+	//var user User
+	//DB.Preload("Articles", "id = ?", 1).Take(&user, 1)
+	//fmt.Println(user)
+
+	//自定义预加载
+	//var user User
+	//DB.Preload("Articles", func(db *gorm.DB) *gorm.DB {
+	//	return db.Where("id in ?", []int{1, 2})
+	//}).Take(&user, 1)
+	//fmt.Println(user)
+
+	// 删除
+	//1 级联删除
+	//删除用户，与用户关联的文章也会删除
+	//var user User
+	//DB.Take(&user, 1)
+	//DB.Select("Articles").Delete(&user)
+
+	//2 清除外键关系
+	//删除用户，与将与用户关联的文章，外键设置为null
+	//var user User
+	//DB.Preload("Articles").Take(&user, 2)
+	//DB.Model(&user).Association("Articles").Delete(&user.Articles)
 }

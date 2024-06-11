@@ -112,6 +112,17 @@ type ContentCensorModel struct {
 	ProcesserTime time.Time `json:"processer_time" gorm:"column:processer_time;comment:处理时间"`
 }
 
+// 日志记录
+type UserOperationLoggingModel struct {
+	ID         int64     `json:"id" gorm:"column:id;not null;primaryKey;unique;comment:主键"`
+	UserId     int64     `json:"user_id" gorm:"column:user_id;comment:用户ID"`
+	OpModule   *string   `json:"op_module" gorm:"column:op_module;comment:操作模块"`   // 使用*号可以 默认是空字符串
+	OpType     *string   `json:"op_type" gorm:"column:op_type;comment:操作类型"`       // 使用*号可以 默认是空字符串
+	OpAction   *string   `json:"op_action" gorm:"column:op_action;comment:操作行为"`   // 使用*号可以 默认是空字符串
+	OpContent  *string   `json:"op_content" gorm:"column:op_content;comment:操作内容"` // 使用*号可以 默认是空字符串 json格式字符串
+	CreateTime time.Time `json:"create_time" gorm:"column:create_time;comment:时间"`
+}
+
 //运行2个go文件，只能有一个main函数《《
 
 func main() {
@@ -119,5 +130,10 @@ func main() {
 	// DB.Debug().AutoMigrate(&Student{}) // .Debug()日志记录
 	// DB.Debug().AutoMigrate(&UserReportModel{})    // 用户举报
 	// DB.Debug().AutoMigrate(&UserFeedbackModel{})  // 用户反馈
-	DB.Debug().AutoMigrate(&ContentCensorModel{}) // 内容审查
+	// DB.Debug().AutoMigrate(&ContentCensorModel{}) // 内容审查
+	DB.Debug().AutoMigrate(&UserOperationLoggingModel{}) // 日志信息
 }
+
+/*
+cd modules-go/gorm && go run database/PostgreSQL.go
+*/
